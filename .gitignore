@@ -1,0 +1,101 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Virtual Environment
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Data and models
+data/raw/*
+data/processed/*
+data/models/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/models/.gitkeep
+
+# Configuration with sensitive information
+config/api_keys.json
+
+# Unity
+unity/[Ll]ibrary/
+unity/[Tt]emp/
+unity/[Oo]bj/
+unity/[Bb]uild/
+unity/[Bb]uilds/
+unity/[Ll]ogs/
+unity/[Uu]ser[Ss]ettings/
+unity/*.pidb
+unity/*.booproj
+unity/*.svd
+unity/*.pdb
+unity/*.mdb
+unity/*.opendb
+unity/*.VC.db
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db 
+   # Create a .gitignore file for Python and Unity
+   echo "# Python" > .gitignore
+   echo "__pycache__/" >> .gitignore
+   echo "*.py[cod]" >> .gitignore
+   echo "*$py.class" >> .gitignore
+   echo "venv/" >> .gitignore
+   echo "env/" >> .gitignore
+   echo ".env" >> .gitignore
+   
+   # Unity specific
+   echo "# Unity" >> .gitignore
+   echo "[Ll]ibrary/" >> .gitignore
+   echo "[Tt]emp/" >> .gitignore
+   echo "[Oo]bj/" >> .gitignore
+   echo "[Bb]uild/" >> .gitignore
+   echo "[Bb]uilds/" >> .gitignore
+   echo "[Ll]ogs/" >> .gitignore
+   echo "*.pidb" >> .gitignore
+   echo "*.unityproj" >> .gitignore
+   echo "*.sln" >> .gitignore
+   echo "*.suo" >> .gitignore
+   echo "*.tmp" >> .gitignore
+   echo "*.user" >> .gitignore
+   echo "*.userprefs" >> .gitignore
+   echo "*.booproj" >> .gitignore
+   
+   # Large data files
+   echo "# Large data files" >> .gitignore
+   echo "*.zip" >> .gitignore
+   echo "*.tif" >> .gitignore
+   echo "*.raw" >> .gitignore

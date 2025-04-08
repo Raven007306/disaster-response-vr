@@ -1,0 +1,44 @@
+# Application Configuration
+
+# Server settings
+server:
+  host: "0.0.0.0"
+  port: 8000
+  debug: true
+  workers: 4
+
+# Data settings
+data:
+  storage_path: "./data"
+  cache_enabled: true
+  cache_ttl: 3600  # seconds
+  max_file_size: 1073741824  # 1GB in bytes
+
+# AI model settings
+models:
+  model_path: "./data/models"
+  batch_size: 32
+  inference_timeout: 30  # seconds
+  default_confidence_threshold: 0.7
+
+# VR/AR settings
+vr_ar:
+  max_terrain_resolution: 4096
+  lod_levels: 5
+  max_concurrent_users: 10
+  enable_collaborative_mode: true
+
+# Disaster types
+disaster_types:
+  - flood
+  - wildfire
+  - earthquake
+  - cyclone
+  - landslide
+
+# Logging
+logging:
+  level: "INFO"
+  file: "./logs/app.log"
+  max_size: 10485760  # 10MB
+  backup_count: 5 
