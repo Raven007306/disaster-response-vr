@@ -71,6 +71,22 @@ def process_cartodem(tif_file_path, show_plots=True, export_unity=True, resoluti
             unity_export = processor.export_for_unity(resolution=resolution)
             results["unity_export"] = unity_export
         
+        # Create web visualization
+        web_vis_file = processor.create_web_visualization()
+        results['web_visualization'] = web_vis_file
+        
+        # Analyze disaster risks
+        risk_analysis = processor.analyze_disaster_risks()
+        results.update(risk_analysis)
+        
+        # Create flood simulation
+        flood_sim_file = processor.create_flood_simulation()
+        results['flood_simulation'] = flood_sim_file
+        
+        # Create dashboard
+        dashboard_file = processor.create_dashboard(results)
+        results['dashboard'] = dashboard_file
+        
         logger.info("Processing completed successfully")
         return results
     
@@ -123,6 +139,11 @@ def main():
             print("   - Set Depth to 16 bit")
             print("   - Set Byte Order to 'Little Endian'")
             print("4. Click 'Import' to apply the heightmap")
+
+        print("\nProcessing complete!")
+        print(f"To view the interactive 3D visualization, open: {results['web_visualization']}")
+        print(f"To view the flood simulation, open: {results['flood_simulation']}")
+        print(f"To view the complete dashboard, open: {results['dashboard']}")
 
 if __name__ == "__main__":
     main() 

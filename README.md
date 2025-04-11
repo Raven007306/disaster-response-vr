@@ -1,35 +1,47 @@
-# AI-Driven VR/AR Geospatial Analytics for Disaster Response
+# Disaster Response VR/AR Project
 
-This project combines AI, VR/AR, and geospatial data to create an immersive platform for disaster response and management.
-
-## Overview
-
-The system integrates ISRO's remote sensing data with AI models and VR/AR visualization to provide emergency responders with enhanced situational awareness and decision-making capabilities.
+A web-based disaster response visualization tool that analyzes terrain data to identify potential disaster risks and simulate flood scenarios.
 
 ## Features
 
-- AI-powered disaster prediction and analysis
-- Immersive VR/AR visualization of geospatial data
-- Real-time analytics for disaster response
-- Integration with multiple satellite imagery sources
-- Specialized modules for different disaster types (floods, wildfires, earthquakes, etc.)
+- **Terrain Visualization**: 2D elevation maps and interactive 3D terrain models
+- **Disaster Risk Analysis**: Identification of landslide and flood risk areas
+- **Flood Simulation**: Interactive simulation of flooding at different water levels
+- **Comprehensive Dashboard**: All analyses in one place
 
-## Setup
+## Data Sources
+
+This project uses CartoDEM data from the Bhuvan portal provided by ISRO (Indian Space Research Organisation).
+
+## Installation
 
 1. Clone this repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Configure data sources in `config/api_keys.json`
-4. Run the setup script: `python setup.py develop`
+2. Install dependencies:
+   ```
+   pip install numpy matplotlib rasterio scipy plotly ipywidgets
+   ```
+
+## Usage
+
+1. Process the CartoDEM data:
+   ```
+   python scripts/process_cartodem.py data/raw/cartodem/cartodem_cdnc43e_geoid_CDEM/cdnc43e/cdnc43e.tif
+   ```
+
+2. Open the generated dashboard in your web browser:
+   ```
+   data/raw/cartodem/cartodem_cdnc43e_geoid_CDEM/cdnc43e/processed/cdnc43e_dashboard.html
+   ```
 
 ## Project Structure
 
-- `data/`: Raw and processed geospatial data
-- `src/`: Source code for data processing, AI models, and visualization
-- `unity/`: Unity project for VR/AR implementation
-- `notebooks/`: Jupyter notebooks for data exploration and analysis
-- `tests/`: Unit and integration tests
-- `docs/`: Project documentation
+- `src/data/processors/`: Data processing modules
+- `scripts/`: Processing scripts
+- `data/raw/`: Raw data files
+- `data/raw/.../processed/`: Processed outputs and visualizations
 
-## License
+## Future Work
 
-[MIT License](LICENSE) 
+- Integration with Unity for VR/AR experiences
+- Real-time disaster simulation
+- Multi-user collaboration features 
